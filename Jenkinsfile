@@ -2,26 +2,12 @@
 
 pipeline {
     agent none
-    stages {
-        stage('Demo') {
-            echo 'Hello World'
-            sayHello 'Dave'
-            }       
-        
-        stage('Example') {
-            steps {
-                echo "running on ${env.JENKINS_URL} for build number ${env.BUILD_ID} nd Job name ${env.JOB_NAME}" 
-            }
+       stage ('Example') {
+        steps {
+             script { 
+                 echo 'Hello World'
+                 sayHello 'Dave'
+             }
         }
-//defining environment variable and we can print all environment variables with printenv        
-        stage('Example1') {
-            environment { 
-                DEBUG_FLAGS = '-g'
-            }
-            steps {
-                sh 'printenv'
-            }
-        }
-
     }
 }
