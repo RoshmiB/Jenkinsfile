@@ -1,7 +1,15 @@
 pipeline {
+    
     agent any
+    
+    @Library('pipeline-library-demo')_
   
     stages {
+        stage('Demo') {
+            echo 'Hello World'
+            sayHello 'Dave'
+            }       
+        
         stage('Example') {
             steps {
                 echo "running on ${env.JENKINS_URL} for build number ${env.BUILD_ID} nd Job name ${env.JOB_NAME}" 
