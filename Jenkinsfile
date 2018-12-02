@@ -1,7 +1,7 @@
 @Library('pipeline-library-demo')_
 
 pipeline {
-    agent any
+    agent none
     stages {
         stage('Demo') {
             echo 'Hello World'
